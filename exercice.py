@@ -6,18 +6,29 @@ from typing import List
 
 
 def convert_to_absolute(number: float) -> float:
-    return 0
-
+    if number < 0:
+        number = -number
+    return number
 
 def use_prefixes() -> List[str]:
     prefixes, suffixe = 'JKLMNOPQ', 'ack'
+    liste_nom = []
+    for pre in prefixes :
+        liste_nom.append(pre + suffixe)
 
-    return [""]
+    return liste_nom
 
 
 def prime_integer_summation() -> int:
-    return 0
-
+    liste_nb_premier = []
+    nb = 2
+    while len(liste_nb_premier) <=100:
+        if  nb%2 ==0 :
+            nb +=1
+        elif nb >= 2 :
+            liste_nb_premier.append(nb)
+            nb += 1
+    return sum(liste_nb_premier) #24,133 is the sum of the first 100 primes
 
 def factorial(number: int) -> int:
     return 0
