@@ -1,48 +1,54 @@
-test_absolute (__main__.TestExercice) ... ok
-test_factorial (__main__.TestExercice) ... FAIL
-test_prefixes (__main__.TestExercice) ... ok
-test_summation (__main__.TestExercice) ... FAIL
-test_verify_ages (__main__.TestExercice) ... FAIL
+test_absolute (__main__.TestExercice) ... ERROR
+test_factorial (__main__.TestExercice) ... ERROR
+test_prefixes (__main__.TestExercice) ... ERROR
+test_summation (__main__.TestExercice) ... ERROR
+test_verify_ages (__main__.TestExercice) ... ERROR
 
 ======================================================================
-FAIL: test_factorial (__main__.TestExercice)
+ERROR: test_absolute (__main__.TestExercice)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "test_exercice.py", line 62, in test_factorial
-    'Mauvaise réponse'
-AssertionError: Lists differ: [0, 0, 0, 0] != [1, 6, 40320, 3628800]
-
-First differing element 0:
-0
-1
-
-- [0, 0, 0, 0]
-+ [1, 6, 40320, 3628800] : Mauvaise réponse
+  File "test_exercice.py", line 15, in test_absolute
+    output = [exercice.convert_to_absolute(v) for v in values]
+  File "test_exercice.py", line 15, in <listcomp>
+    output = [exercice.convert_to_absolute(v) for v in values]
+AttributeError: module 'exercice' has no attribute 'convert_to_absolute'
 
 ======================================================================
-FAIL: test_summation (__main__.TestExercice)
+ERROR: test_factorial (__main__.TestExercice)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "test_exercice.py", line 50, in test_summation
-    'Mauvaise réponse'
-AssertionError: 10403 != 24133 : Mauvaise réponse
+  File "test_exercice.py", line 56, in test_factorial
+    output = [exercice.factorial(v) for v in values]
+  File "test_exercice.py", line 56, in <listcomp>
+    output = [exercice.factorial(v) for v in values]
+AttributeError: module 'exercice' has no attribute 'factorial'
 
 ======================================================================
-FAIL: test_verify_ages (__main__.TestExercice)
+ERROR: test_prefixes (__main__.TestExercice)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "test_exercice.py", line 77, in test_verify_ages
-    'Mauvaise réponse'
-AssertionError: Lists differ: [] != [False, True, False, False, True, True, True, True, False]
+  File "test_exercice.py", line 26, in test_prefixes
+    output = exercice.use_prefixes()
+AttributeError: module 'exercice' has no attribute 'use_prefixes'
 
-Second list contains 9 additional elements.
-First extra element 0:
-False
+======================================================================
+ERROR: test_summation (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 45, in test_summation
+    output = exercice.prime_integer_summation()
+AttributeError: module 'exercice' has no attribute 'prime_integer_summation'
 
-- []
-+ [False, True, False, False, True, True, True, True, False] : Mauvaise réponse
+======================================================================
+ERROR: test_verify_ages (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 72, in test_verify_ages
+    output = exercice.verify_ages(groups)
+AttributeError: module 'exercice' has no attribute 'verify_ages'
 
 ----------------------------------------------------------------------
 Ran 5 tests in 0.001s
 
-FAILED (failures=3)
+FAILED (errors=5)
