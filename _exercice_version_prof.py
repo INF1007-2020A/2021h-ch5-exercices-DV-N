@@ -6,29 +6,97 @@ from typing import List
 
 
 def convert_to_absolute(number: float) -> float:
-    return 0
+    if number < 0:
+        return number * -1
+
+    return number
 
 
 def use_prefixes() -> List[str]:
     prefixes, suffixe = 'JKLMNOPQ', 'ack'
+    name_list = []
+    for pre in prefixes:
+        name_list.append(pre + suffixe)
 
-    return [""]
+    return name_list
 
 
 def prime_integer_summation() -> int:
-    return 0
+    prime = [2, 3, 5]
+    number = 6
+    while len(prime) < 100:
+        is_prime = True
+        for i in range(2, number // 2):
+            if number % i == 0:
+                is_prime = False
+                break
+
+        if is_prime:
+            prime.append(number)
+
+        number += 1
+
+    return sum(prime)
 
 
 def factorial(number: int) -> int:
-    return 0
+    factorial_value = 1
+    for n in range(2, number + 1):
+        factorial_value *= n
+
+    return factorial_value
 
 
 def use_continue() -> None:
-    pass
+    for i in range(1, 11):
+        if i == 5:
+            continue
+
+        print(i)
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    return []
+    acceptance = []
+    for sub_group in groups:
+        if len(sub_group) > 10 or len(sub_group) <= 3:
+            acceptance.append(False)
+            continue
+        if 25 in sub_group:
+            acceptance.append(True)
+            continue
+        if 50 in sub_group:
+            is_50 = True
+        else:
+            is_50 = False
+
+        is_accepted = True
+        for age in sub_group:
+            if age < 18:
+                is_accepted = False
+                break
+            elif is_50 and age > 70:
+                is_accepted = False
+                break
+
+        acceptance.append(is_accepted)
+
+    return acceptance
+
+# Autre solution possible
+"""
+def verify_ages(groups: List[List[int]]) -> List[bool]:
+    acceptance = []
+    for sub_group in groups:
+        if len(sub_group) > 10 or len(sub_group) <= 3:
+            acceptance.append(False)
+            continue
+        if 25 in sub_group:
+            acceptance.append(True)
+            continue
+        if (min(sub_group) < 18) or (50 in sub_group and max(sub_group) > 70):
+            acceptance.append(False)
+            continue
+"""
 
 
 def main() -> None:
