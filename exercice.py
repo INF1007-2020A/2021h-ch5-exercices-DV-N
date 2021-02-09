@@ -23,13 +23,13 @@ if __name__ == '__main__':
     def prime_integer_summation() -> int:
         liste_nb_premier = []
         nb = 1
-        while len(liste_nb_premier) <=99:
-            #for i in range(2,nb): and if nb%i ==0:
-            if nb%2 ==0:
-                nb +=1
-            else:
-                liste_nb_premier.append(nb)
-                nb += 1
+        while len(liste_nb_premier) <= 99:
+            for i in range(2,nb): #creer un loop infinie a cete etape
+                if nb%i ==0:
+                    nb +=1
+                else:
+                    liste_nb_premier.append(nb)
+                    nb += 1
         return sum(liste_nb_premier) #24,133 is the sum of the first 100 primes, +1 pcq nb=2 l'exclu de la la liste
 
     def factorial(number: int) -> int:
