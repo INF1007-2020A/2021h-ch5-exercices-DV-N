@@ -1,5 +1,17 @@
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod-redirect-0.herokuapp.com/)
 
+
+## Résultats
+Score | Critères
+--- | ---
+1/1 | Conversion en valeur absolue
+0/1 | Calcul de la factorielle
+1/1 | Utilisation des préfixes
+0/1 | Calcul de la sommation
+0/1 | Vérification de l'acceptance des groupes d'âges
+2/5 | **Total**
+
+[Voir détails](./logs/tests_results.txt) | [Rafraîchir](../../)
 # Exercices en vrac (chapitre 5)
 
 Avant de commencer, consultez les instructions à suivre dans [instructions.md](instructions.md)
