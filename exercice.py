@@ -19,26 +19,31 @@ if __name__ == '__main__':
 
         return liste_nom
 
-
     def prime_integer_summation() -> int:
         liste_nb_premier = []
-        nb = 1
-        while len(liste_nb_premier) <= 99:
-            for i in range(2,nb): #creer un loop infinie a cete etape
+        nb = 2
+        while len(liste_nb_premier) < 100:
+            for i in range(2,nb+1): #creer un loop infinie a cette etape, mon hypothese : pcq le 1 et le 2 ne respecte pas le range
                 if nb%i ==0:
                     nb +=1
+                    continue
                 else:
                     liste_nb_premier.append(nb)
                     nb += 1
-        return sum(liste_nb_premier) #24,133 is the sum of the first 100 primes, +1 pcq nb=2 l'exclu de la la liste
+        return sum(liste_nb_premier) #24,133 is the sum of the first 100 primes, +1 pcq nb=2 l'exclu de la liste
 
     def factorial(number: int) -> int:
-        return 0
+        fac = 1
+        for i in range(1, number+1):
+            fac *= i
+        return fac
 
 
     def use_continue() -> None:
-        pass
-
+        for i in range(1,10+1):
+            if i ==5:
+                continue
+            print(i)
 
     def verify_ages(groups: List[List[int]]) -> List[bool]:
         return []
